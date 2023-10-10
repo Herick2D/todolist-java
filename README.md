@@ -4,6 +4,6 @@ Uma aplicação Java baseada no Spring Boot com foco acadêmico, desenvolvida co
 Este projeto facilita o controle e a organização de suas tarefas diárias através de uma interface web simples e intuitiva.
 
 ## Tecnologias Utilizadas
-Spring Boot: Estrutura de aplicativo para desenvolvimento rápido de aplicativos Java.
-Maven: Gerenciamento de dependências e construção de projeto.
-H2 Database Engine: Sistema de gerenciamento de banco de dados relacional em memória.
+- Spring Boot: Estrutura de aplicativo para desenvolvimento rápido de aplicativos Java.
+- Maven: Gerenciamento de dependências e construção de projeto.
+- H2 Database Engine: Sistema de gerenciamento de banco de dados relacional em memória.
