@@ -37,7 +37,8 @@ public class TaskController {
         }
 
         var task = this.taskRepository.save(taskModel);
-        return ResponseEntity.status(HttpStatus.OK).body(task);
+        var taskResponse = ResponseEntity.status(HttpStatus.OK).body(task);
+        return taskResponse;
 
     }
 
