@@ -25,13 +25,15 @@ public class TaskController {
 
         var currentDate = LocalDateTime.now();
         if(currentDate.isAfter(taskModel.getStartAt()) || currentDate.isAfter(taskModel.getEndAt())) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+            var messageStartAtError = ResponseEntity.status(HttpStatus.BAD_REQUEST)
                     .body("The start date and end date of the activity must be later than the current date.");
+            return messageStartAtError;
         }
 
         if(taskModel.getStartAt().isAfter(taskModel.getEndAt())) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+            var messageEndAtError = ResponseEntity.status(HttpStatus.BAD_REQUEST)
                     .body("The start date must be less than the end date.");
+            return messageEndAtError;
         }
 
         var task = this.taskRepository.save(taskModel);
@@ -59,8 +61,9 @@ public class TaskController {
         }
 
         if(!task.getIdUser().equals(idUser)) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+            var notHavePermission = ResponseEntity.status(HttpStatus.BAD_REQUEST)
                     .body("The user does not have permission to change this task");
+            return notHavePermission;
 
         }
 
