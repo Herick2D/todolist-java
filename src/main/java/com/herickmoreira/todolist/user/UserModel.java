@@ -15,16 +15,16 @@ import java.util.UUID;
 @Entity(name = "tb_users")
 public class UserModel {
 
-    @Id
-    @GeneratedValue(generator = "UUID")
-    private UUID id;
+  @Id
+  @GeneratedValue(generator = "UUID")
+  private UUID id;
 
-    @Column(unique = true)
-    private String username;
-    private String name;
-    private String password;
+  @Column(unique = true)
+  private String username;
+  private String name;
+  private String password;
 
-    @CreationTimestamp
-    private LocalDateTime createdAt;
+  @CreationTimestamp
+  private LocalDateTime createdAt;
 
 }

@@ -10,9 +10,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class ExceptionHandlerController {
 
-    @ExceptionHandler(HttpMessageNotReadableException.class)
-    public ResponseEntity<String> handleHttpMessageNotReadableException(HttpMessageNotReadableException e) {
-        var msg = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMostSpecificCause().getMessage());
-        return msg;
-    }
+  @ExceptionHandler(HttpMessageNotReadableException.class)
+  public ResponseEntity<String> handleHttpMessageNotReadableException(HttpMessageNotReadableException e) {
+    return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMostSpecificCause().getMessage());
+  }
 }
